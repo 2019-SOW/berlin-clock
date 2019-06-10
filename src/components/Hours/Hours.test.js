@@ -41,6 +41,18 @@ describe('Berlin Clock', function(){
             expect(hours.bottomHours()).toBe('RRRO');
         });
 
+        it('at 02:04:00 should have all the lamps to be RROO', () => {
+            let time = '02:04:00';
+            const [h, m, s] = time.split(":");
+            const props = {
+                hours: h
+            }
+            
+            hours = setup(props);
+            
+            expect(hours.bottomHours()).toBe('RROO');
+        });
+
     });
 
 });
