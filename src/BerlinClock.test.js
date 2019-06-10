@@ -1,5 +1,8 @@
 import React from 'react';
 import BerlinClock from './BerlinClock';
+import Seconds from './components/Seconds/Seconds';
+import Hours from './components/Hours/Hours';
+import Minutes from './components/Minutes/Minutes';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { shallow } from 'enzyme';

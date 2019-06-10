@@ -15,6 +15,9 @@ class BerlinClock extends React.Component {
       minutes: "00",
       seconds: "00"
     }
+    this.seconds = React.createRef();
+    this.minutes = React.createRef();
+    this.hours = React.createRef();
   }
 
   updateClock(time){
@@ -40,12 +43,17 @@ class BerlinClock extends React.Component {
     clearInterval(this.intervalId);
   }
 
+  convertDigitalToBerlinTime(){
+    return this.seconds.current.seconds() + this.minutes.current.topMinutes() + this.minutes.current.bottomMinutes() +
+      this.hours.current.topHours() + this.hours.current.bottomHours();
+  }
+
   render() {
     return (
       <div id="berlinClock">
-        <Seconds seconds = {this.state.seconds}/>
-        <Hours hours = {this.state.hours}/>
-        <Minutes minutes = {this.state.minutes}/>
+        <Seconds ref={this.seconds} seconds = {this.state.seconds}/>
+        <Hours ref={this.hours} hours = {this.state.hours}/>
+        <Minutes ref={this.minutes} minutes = {this.state.minutes}/>
       </div>
     );
   }
