@@ -29,6 +29,7 @@
     margin: 8px 4px;
   }
   
+  #oneHourRow .light,
   #oneMinuteRow .light {
     height: 40px;
     width: 70px;
@@ -39,12 +40,14 @@
     width: 20px;
   }
   
+  #oneHourRow :first-child,
   #fiveMinuteRow :first-child,
   #oneMinuteRow :first-child {
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
   }
   
+  #oneHourRow :last-child,
   #fiveMinuteRow :last-child,
   #oneMinuteRow :last-child {
     border-top-right-radius: 16px;
@@ -61,10 +64,12 @@
     background-color: rgb(110, 110, 106);
   }
 
+  #oneHourRow .light.on,
   #fiveMinuteRow .light.on:nth-child(3n + 3) {
     background-color: #f33;
   }
   
+  #oneHourRow .light.off,
   #fiveMinuteRow .light.off:nth-child(3n + 3) {
     background-color: #633;
   }
