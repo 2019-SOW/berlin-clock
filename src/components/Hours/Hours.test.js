@@ -15,7 +15,7 @@ describe('Berlin Clock', function(){
 
     let hours;
 
-    describe('Single minutes row', function(){
+    describe('Single hours row', function(){
 
         it('at 00:00:00 should have all the lamps to be OOOO', () => {
             let time = '00:00:00';
@@ -75,6 +75,70 @@ describe('Berlin Clock', function(){
             hours = setup(props);
             
             expect(hours.bottomHours()).toBe('RRRR');
+        });
+
+    });
+
+    describe('Five hours row', function(){
+
+        it('at 00:00:00 should have all the lamps to be OOOO', () => {
+            let time = '00:00:00';
+            const [h, m, s] = time.split(":");
+            const props = {
+                hours: h
+            }
+            
+            hours = setup(props);
+            
+            expect(hours.topHours()).toBe('OOOO');
+        });
+
+        it('at 23:59:59 should have all the lamps to be RRRR', () => {
+            let time = '23:59:59';
+            const [h, m, s] = time.split(":");
+            const props = {
+                hours: h
+            }
+            
+            hours = setup(props);
+            
+            expect(hours.topHours()).toBe('RRRR');
+        });
+
+        it('at 02:04:00 should have all the lamps to be OOOO', () => {
+            let time = '02:04:00';
+            const [h, m, s] = time.split(":");
+            const props = {
+                hours: h
+            }
+            
+            hours = setup(props);
+            
+            expect(hours.topHours()).toBe('OOOO');
+        });
+
+        it('at 08:23:00 should have all the lamps to be ROOO', () => {
+            let time = '08:23:00';
+            const [h, m, s] = time.split(":");
+            const props = {
+                hours: h
+            }
+            
+            hours = setup(props);
+            
+            expect(hours.topHours()).toBe('ROOO');
+        });
+
+        it('at 16:35:00 should have all the lamps to be RRRO', () => {
+            let time = '16:35:00';
+            const [h, m, s] = time.split(":");
+            const props = {
+                hours: h
+            }
+            
+            hours = setup(props);
+            
+            expect(hours.topHours()).toBe('RRRO');
         });
 
     });
