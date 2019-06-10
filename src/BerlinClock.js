@@ -29,6 +29,14 @@ class BerlinClock extends React.Component {
     });
   }
 
+  componentDidMount() {
+    this.intervalId = setInterval(() => this.updateClock(), constants.ONE_SECOND);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
+  }
+
   render() {
     return (
       <div className="berlinClock">

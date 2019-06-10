@@ -23,4 +23,19 @@ describe('Berlin clock', function(){
     expect(clock.updateClock(time)).toBe('Invalid time');
   });
 
+  it('should update the clock every second', () => {
+    wrapper = shallow(<BerlinClock />);
+    clock = wrapper.instance();
+
+
+    expect(clock.state('timeout')).toBeFalsy();
+    
+    clock.instance().updateClock()
+
+    setTimeout(()=>{
+      expect(clock.state('timeout')).toBeTruthy();
+      done()
+    }, 1001)
+  });
+
 });
