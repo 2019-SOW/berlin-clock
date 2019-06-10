@@ -22,11 +22,21 @@ class Minutes extends React.Component {
         return row;
     }
 
+    formLampBlocks(row){
+        if(row){
+            let lamps = row.split("");
+            const lampBlocks = lamps.map((lamp, index) => {
+                return <div key={index} className={"light " + (lamp === constants.YELLOW_LAMP ? constants.LAMP_ON_CLASS : constants.LAMP_OFF_CLASS)}></div>;
+            });
+            return lampBlocks;
+        } 
+    }
+
     render() {
         return (
-            <div>
-                
-            </div>
+            <React.Fragment>
+                <div id="oneMinuteRow">{this.formLampBlocks(this.bottomMinutes())}</div>
+            </React.Fragment>
         );
     }
 

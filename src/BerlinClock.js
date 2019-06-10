@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import constants from './utils/constants';
 import { isValidTime } from './utils/clockUtils';
 import Minutes from './components/Minutes/Minutes';
@@ -17,7 +18,7 @@ class BerlinClock extends React.Component {
   updateClock(time){
     if(!isValidTime(time))
         return constants.INVALID_MESSAGE;
-    const [hours, minutes, seconds] = time.split(':');
+    const [hours, minutes, seconds] = time ? time.split(':') : moment().format('H:m:s').split(':');
     this.setTime(hours, minutes, seconds);
   }
 
@@ -30,7 +31,7 @@ class BerlinClock extends React.Component {
   }
 
   componentDidMount() {
-    this.intervalId = setInterval(() => this.updateClock(), constants.ONE_SECOND);
+    this.intervalId = setInterval(() => this.updateClock(moment().format("HH:mm:ss")), constants.ONE_SECOND);
   }
 
   componentWillUnmount() {
