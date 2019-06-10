@@ -78,4 +78,21 @@ describe('Berlin Clock', function(){
         });
 
     });
+
+    describe('Five minutes row', function(){
+
+        it('at 00:00:00 should have all the lamps to be OOOOOOOOOOO', () => {
+            let time = '00:00:00';
+            const [h, m, s] = time.split(":");
+            const props = {
+                minutes: m
+            }
+            
+            minutes = setup(props);
+            
+            expect(minutes.topMinutes()).toBe('OOOOOOOOOOO');
+        });
+
+    });
+
 });
