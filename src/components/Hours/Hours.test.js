@@ -65,6 +65,18 @@ describe('Berlin Clock', function(){
             expect(hours.bottomHours()).toBe('RRRO');
         });
 
+        it('at 14:35:00 should have all the lamps to be RRRR', () => {
+            let time = '14:35:00';
+            const [h, m, s] = time.split(":");
+            const props = {
+                hours: h
+            }
+            
+            hours = setup(props);
+            
+            expect(hours.bottomHours()).toBe('RRRR');
+        });
+
     });
 
 });
