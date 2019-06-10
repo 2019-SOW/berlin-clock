@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  body {
+    background-color: #dedddd;
+    display: table;
+    text-align: center;
+  }
+  
+  main {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .berlinClock {
+    font-size: 0;
+    float: left;
+  }
+
+  .light {
+    display: inline-block;
+    margin: 8px 4px;
+  }
+  
+  #oneMinuteRow .light {
+    height: 40px;
+    width: 70px;
+  }
+  
+  #oneMinuteRow :first-child {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+  }
+  
+  #oneMinuteRow :last-child {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+
+  #oneMinuteRow .light.on {
+    background-color: #ff3;
+  }
+
+  #oneMinuteRow .light.off {
+    background-color: rgb(110, 110, 106);
+  }
