@@ -28,6 +28,11 @@
     display: inline-block;
     margin: 8px 4px;
   }
+
+  #secondsLamp .light {
+    height: 60px;
+    width: 60px;
+  }
   
   #fiveHourRow .light,
   #oneHourRow .light,
@@ -39,6 +44,10 @@
   #fiveMinuteRow .light {
     height: 45px;
     width: 20px;
+  }
+
+  #secondsLamp .light {
+    border-radius: 48px;
   }
   
   #fiveHourRow :first-child,
@@ -57,11 +66,13 @@
     border-bottom-right-radius: 16px;
   }
 
+  #secondsLamp .light.on,
   #fiveMinuteRow .light.on:not(:nth-child(3n + 3)),
   #oneMinuteRow .light.on {
     background-color: #ff3;
   }
 
+  #secondsLamp .light.off,
   #fiveMinuteRow .light.off:not(:nth-child(3n + 3)),
   #oneMinuteRow .light.off {
     background-color: rgb(110, 110, 106);

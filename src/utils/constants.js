@@ -10,7 +10,8 @@ const constants = {
     ONE_SECOND: 1000,
     LAMP_ON_CLASS: 'on',
     LAMP_OFF_CLASS: 'off',
-    FIVE: 5
+    FIVE: 5,
+    TWO: 2
 }
 
 export default constants;
