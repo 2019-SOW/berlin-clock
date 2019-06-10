@@ -21,12 +21,24 @@ describe('Berlin Clock', function(){
             let time = '00:00:00';
             const [h, m, s] = time.split(":");
             const props = {
-                hours: m
+                hours: h
             }
             
             hours = setup(props);
             
             expect(hours.bottomHours()).toBe('OOOO');
+        });
+
+        it('at 23:59:59 should have all the lamps to be RRRO', () => {
+            let time = '23:59:59';
+            const [h, m, s] = time.split(":");
+            const props = {
+                hours: h
+            }
+            
+            hours = setup(props);
+            
+            expect(hours.bottomHours()).toBe('RRRO');
         });
 
     });

@@ -5,7 +5,7 @@ import { modulo5, getOnOffLamps } from '../../utils/clockUtils';
 class Hours extends React.Component {
 
     bottomHours() {
-        return getOnOffLamps(constants.TOTAL_BOTTOM_HOURS_LAMP, modulo5(this.props.hours));
+        return getOnOffLamps(constants.TOTAL_BOTTOM_HOURS_LAMP, modulo5(this.props.hours)).replace(/Y/g, 'R');
     }
 
     formLampBlocks(row) {
