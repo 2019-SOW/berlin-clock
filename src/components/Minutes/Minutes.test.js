@@ -117,6 +117,18 @@ describe('Berlin Clock', function(){
             expect(minutes.topMinutes()).toBe('OOOOOOOOOOO');
         });
 
+        it('at 12:23:00 should have all the lamps to be YYRYOOOOOOO', () => {
+            let time = '12:23:00';
+            const [h, m, s] = time.split(":");
+            const props = {
+                minutes: m
+            }
+            
+            minutes = setup(props);
+            
+            expect(minutes.topMinutes()).toBe('YYRYOOOOOOO');
+        });
+
     });
 
 });
