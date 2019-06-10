@@ -6,7 +6,11 @@ import { shallow } from 'enzyme';
 
 configure({ adapter: new Adapter() });
 
-function setup(props){
+function setup(time){
+    const [h, m, s] = time.split(":");
+    const props = {
+        seconds: s
+    }
     let enzymeWrapper = shallow(<Seconds {...props}/>);
     return enzymeWrapper.instance();
 }
@@ -14,29 +18,22 @@ function setup(props){
 describe('Berlin Clock', function(){
 
     let seconds;
+    let time;
 
     describe('Seconds row', function(){
 
         it('at 00:00:00 should have all the lamps to be Y', () => {
-            let time = '00:00:00';
-            const [h, m, s] = time.split(":");
-            const props = {
-                seconds: s
-            }
+            time = '00:00:00';
             
-            seconds = setup(props);
+            seconds = setup(time);
             
             expect(seconds.seconds()).toBe('Y');
         });
 
         it('at 23:59:59 should have all the lamps to be O', () => {
-            let time = '23:59:59';
-            const [h, m, s] = time.split(":");
-            const props = {
-                seconds: s
-            }
+            time = '23:59:59';
             
-            seconds = setup(props);
+            seconds = setup(time);
             
             expect(seconds.seconds()).toBe('O');
         });
